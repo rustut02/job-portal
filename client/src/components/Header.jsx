@@ -1,13 +1,20 @@
-import {AppBar, Toolbar} from '@mui/material';
-import logo from '../img/jobforyou.png'; // Если Header.jsx находится в src/components
+import {AppBar, Toolbar, styled} from '@mui/material';
+import logoNaming from '../img/jobforyou.png';
+
+const StyledAppBar = styled(AppBar)({
+    background: '#2d2d2d',
+    height: 64
+} )
 
 const Header = () => {
     return (
-        <AppBar>
+        <StyledAppBar>
             <Toolbar>
-            <img src={logo} alt="Job for You" style={{ height: '40px' }} /> {/* Используйте изображение */}
+            <img src={logoNaming} alt="Job for You" style={{ width: 95, marginBottom: 6 }} />
+            Post a Job
+            Find Jobs
             </Toolbar>
-        </AppBar>
+        </StyledAppBar>
     )
 }
 
