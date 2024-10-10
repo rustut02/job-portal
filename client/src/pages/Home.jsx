@@ -1,6 +1,8 @@
 import Header from '../components/Header'
 import { Box, Typography, Button, styled } from '@mui/material'
-import logoCollective from '../img/collectivermbg.png'
+import imgCollective from '../img/collectivermbg.png'
+import { useNavigate } from 'react-router-dom'
+import { routhPath } from '../routes/route'
 
 const Component = styled(Box)({
     marginTop: 70,
@@ -32,16 +34,19 @@ const Component = styled(Box)({
 })
 
 const Home = () => {
+    const navigate = useNavigate();
+
+
     return(
         <div>
-            <Header/>
+            <Header/> 
             <Component>
                 <Box>
                     <Typography>Let's make your next great hire. Fast.</Typography>
-                    <Button variant='contained'>Post a job</Button> 
+                    <Button variant='contained' onClick={() => navigate(routhPath.create)} >Post a job</Button> 
                 </Box>
                 <Box>
-                    <img src={logoCollective} alt='home' style={{ width: 500, marginBottom: 10 }}/> 
+                    <img src={imgCollective} alt='home' style={{ width: 500, marginBottom: 10 }}/> 
                 </Box>
             </Component>
         </div>
